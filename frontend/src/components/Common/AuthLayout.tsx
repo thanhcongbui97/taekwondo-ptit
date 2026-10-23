@@ -1,5 +1,4 @@
 import { Appearance } from "@/components/Common/Appearance"
-import { Logo } from "@/components/Common/Logo"
 import { Footer } from "./Footer"
 
 interface AuthLayoutProps {
@@ -9,8 +8,21 @@ interface AuthLayoutProps {
 export function AuthLayout({ children }: AuthLayoutProps) {
   return (
     <div className="grid min-h-svh lg:grid-cols-2">
-      <div className="bg-muted dark:bg-zinc-900 relative hidden lg:flex lg:items-center lg:justify-center">
-        <Logo variant="full" className="h-16" asLink={false} />
+      <div className="bg-muted dark:bg-zinc-900 relative hidden lg:flex lg:items-center lg:justify-center overflow-hidden">
+        <div
+          className="absolute inset-0 bg-contain bg-center bg-no-repeat opacity-20 dark:opacity-10"
+          style={{ backgroundImage: "url('/assets/images/favicon.ico')" }}
+        />
+        <div className="relative z-10 flex flex-col items-center gap-4 p-8">
+          <img
+            src="/assets/images/favicon.ico"
+            alt="PTIT Taekwondo Management"
+            className="h-24 w-24"
+          />
+          <h1 className="text-3xl font-bold text-center">
+            PTIT Taekwondo Management
+          </h1>
+        </div>
       </div>
       <div className="flex flex-col gap-4 p-6 md:p-10">
         <div className="flex justify-end">
